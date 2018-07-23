@@ -6,13 +6,9 @@ app.use(cors());
 const instructors = csvToJson.fieldDelimiter(',').getJsonFromCsv('instructors.csv');
 
 function findById(data, id) {
-    console.log("ID: ", id);
-    
     for (let i = 0; i < data.length; i++) {
         let holder = data[i].id.toString();
         if (holder === id) {
-            console.log("data[i]:", data[i]);
-            
             return data[i];
         }
     }
